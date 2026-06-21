@@ -1,6 +1,7 @@
 import Hero from '@/components/Hero'
 import Countdown from '@/components/Countdown'
 import EventDetails from '@/components/EventDetails'
+import VenueMap from '@/components/VenueMap'
 
 export default function Page() {
   return (
@@ -8,6 +9,7 @@ export default function Page() {
       <Hero />
       <Countdown />
       <EventDetails />
+      <VenueMap />
     </main>
   )
 }
