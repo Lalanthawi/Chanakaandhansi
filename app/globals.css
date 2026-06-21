@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ivory text-espresso font-sans;
+  }
+}
+
+@layer utilities {
+  .floral-border {
+    background-image:
+      radial-gradient(circle at 10% 50%, rgba(200,147,10,0.27) 12px, transparent 12px),
+      radial-gradient(circle at 25% 50%, rgba(200,147,10,0.2) 8px, transparent 8px),
+      radial-gradient(circle at 42% 50%, rgba(200,147,10,0.27) 10px, transparent 10px),
+      radial-gradient(circle at 58% 50%, rgba(200,147,10,0.27) 10px, transparent 10px),
+      radial-gradient(circle at 75% 50%, rgba(200,147,10,0.2) 8px, transparent 8px),
+      radial-gradient(circle at 90% 50%, rgba(200,147,10,0.27) 12px, transparent 12px);
+  }
+
+  .diagonal-pattern {
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(200,147,10,0.03) 10px,
+      rgba(200,147,10,0.03) 20px
+    );
+  }
+
+  .gold-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #c8930a;
+    font-size: 0.625rem;
+  }
+
+  .gold-divider::before,
+  .gold-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #c8930a, transparent);
+  }
+
+  .couple-frame {
+    position: relative;
+  }
+
+  .couple-frame::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border: 2px solid #c8930a;
+    border-radius: 9999px;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .couple-frame::after {
+    content: '';
+    position: absolute;
+    inset: -13px;
+    border: 1px solid rgba(200,147,10,0.35);
+    border-radius: 9999px;
+    z-index: 10;
+    pointer-events: none;
+  }
+}
