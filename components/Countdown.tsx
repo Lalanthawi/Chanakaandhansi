@@ -19,19 +19,22 @@ function pad(n: number) {
   return String(n).padStart(2, '0')
 }
 
+type TimeLeft = ReturnType<typeof getTimeLeft>
+
 export default function Countdown() {
-  const [time, setTime] = useState(getTimeLeft)
+  const [time, setTime] = useState<TimeLeft | null>(null)
 
   useEffect(() => {
+    setTime(getTimeLeft())
     const id = setInterval(() => setTime(getTimeLeft()), 1000)
     return () => clearInterval(id)
   }, [])
 
   const units = [
-    { label: 'Days', value: time.days },
-    { label: 'Hours', value: time.hours },
-    { label: 'Mins', value: time.mins },
-    { label: 'Secs', value: time.secs },
+    { label: 'Days', value: time?.days ?? 0, pad: false },
+    { label: 'Hours', value: time?.hours ?? 0, pad: true },
+    { label: 'Mins', value: time?.mins ?? 0, pad: true },
+    { label: 'Secs', value: time?.secs ?? 0, pad: true },
   ]
 
   return (
@@ -42,20 +45,16 @@ export default function Countdown() {
       <div className="flex justify-center items-stretch gap-1">
         {units.map((unit, i) => (
           <React.Fragment key={unit.label}>
-            <div
-              className="flex-1 max-w-[64px] bg-gold/10 border border-gold/30 rounded-lg px-2 pt-2.5 pb-1.5 text-center"
-            >
+            <div className="flex-1 max-w-[64px] bg-gold/10 border border-gold/30 rounded-lg px-2 pt-2.5 pb-1.5 text-center">
               <span className="font-serif font-semibold text-3xl text-ivory block leading-none">
-                {unit.label === 'Days' ? time.days : pad(unit.value)}
+                {time === null ? '--' : unit.pad ? pad(unit.value) : unit.value}
               </span>
               <span className="text-[6px] text-gold tracking-[2px] uppercase block mt-1">
                 {unit.label}
               </span>
             </div>
             {i < units.length - 1 && (
-              <span key={`sep-${i}`} className="text-gold text-xl font-bold self-center pb-3 mx-[-2px]">
-                :
-              </span>
+              <span className="text-gold text-xl font-bold self-center pb-3 mx-[-2px]">:</span>
             )}
           </React.Fragment>
         ))}

@@ -30,12 +30,10 @@ export default function Hero() {
         <p className="text-2xl -tracking-wider mb-3 text-gold opacity-70">🌸 🌼 🌸</p>
 
         {/* Names */}
-        <h1 className="font-script text-5xl text-gold leading-tight mb-1">
-          Hansi
-        </h1>
-        <p className="font-script text-3xl text-[#8a6a3a] leading-none mb-1">&</p>
-        <h1 className="font-script text-5xl text-gold leading-tight mb-3">
-          Chanaka
+        <h1 className="font-script text-gold leading-tight mb-3">
+          <span className="text-5xl block mb-1">Hansi</span>
+          <span className="text-3xl text-[#8a6a3a] block leading-none mb-1">&amp;</span>
+          <span className="text-5xl block">Chanaka</span>
         </h1>
 
         <p className="text-[8px] tracking-[3px] uppercase text-[#5a3e1b] mb-3">

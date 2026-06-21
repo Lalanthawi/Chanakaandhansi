@@ -24,6 +24,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://chanakaandhansi.com'),
   title: 'Hansi & Chanaka — July 23, 2026',
   description: 'You are warmly invited to the wedding of Hansi & Chanaka on Thursday, July 23, 2026 at Seetha Banquet Halls, Pilimathalawa.',
   openGraph: {
