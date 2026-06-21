@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design Mockup — Hansi & Chanaka</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #1a1a2e; font-family: Georgia, serif; display: flex; flex-direction: column; align-items: center; padding: 24px 16px; min-height: 100vh; }
+
+  h1 { color: #e8d5a3; font-size: 18px; margin-bottom: 6px; font-weight: normal; letter-spacing: 2px; text-transform: uppercase; }
+  .subtitle { color: #888; font-size: 13px; margin-bottom: 24px; }
+
+  .phone-frame {
+    width: 320px;
+    border-radius: 36px;
+    border: 8px solid #2a2a2a;
+    box-shadow: 0 0 0 2px #444, 0 24px 60px rgba(0,0,0,0.6);
+    overflow: hidden;
+    background: #fdf6e3;
+  }
+
+  /* HERO SECTION */
+  .hero {
+    background: linear-gradient(180deg, #fdf6e3 0%, #f5ece0 100%);
+    padding: 32px 20px 24px;
+    text-align: center;
+    position: relative;
+    border-bottom: 1px solid #e8d5a3;
+  }
+  .floral-top {
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 60px;
+    background-image:
+      radial-gradient(circle at 20% 80%, rgba(200,147,10,0.15) 20px, transparent 20px),
+      radial-gradient(circle at 80% 70%, rgba(200,147,10,0.12) 16px, transparent 16px),
+      radial-gradient(circle at 50% 90%, rgba(200,147,10,0.1) 12px, transparent 12px);
+  }
+  .ornament { color: #c8930a; font-size: 13px; letter-spacing: 4px; margin-bottom: 6px; }
+  .together-text { font-size: 9px; letter-spacing: 3px; color: #8a6a3a; text-transform: uppercase; margin-bottom: 12px; }
+  .couple-illustration {
+    width: 120px; height: 140px; margin: 0 auto 16px;
+    background: radial-gradient(ellipse, #f0e0c0 60%, transparent 100%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 64px;
+    border: 2px solid rgba(200,147,10,0.3);
+    position: relative;
+  }
+  .couple-illustration::before {
+    content: '';
+    position: absolute; inset: -8px;
+    border: 1px solid rgba(200,147,10,0.2);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  }
+  .names {
+    font-family: 'Georgia', serif;
+    font-size: 28px;
+    color: #c8930a;
+    font-style: italic;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .ampersand { font-size: 20px; color: #8a6a3a; display: block; }
+  .tagline { font-size: 9px; letter-spacing: 2px; color: #6b4c2a; text-transform: uppercase; margin-bottom: 16px; }
+  .date-badge {
+    display: inline-block;
+    background: #c8930a;
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding: 6px 16px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    margin-bottom: 4px;
+  }
+  .floral-divider { color: #c8930a; font-size: 14px; margin: 8px 0; letter-spacing: 6px; }
+
+  /* COUNTDOWN SECTION */
+  .countdown {
+    background: #3d2b1a;
+    padding: 20px;
+    text-align: center;
+  }
+  .countdown-label { font-size: 8px; letter-spacing: 3px; color: #c8930a; text-transform: uppercase; margin-bottom: 12px; }
+  .countdown-grid { display: flex; justify-content: center; gap: 10px; }
+  .cd-item { text-align: center; }
+  .cd-num { font-size: 24px; color: #e8d5a3; font-weight: bold; display: block; line-height: 1; }
+  .cd-unit { font-size: 7px; color: #8a6a3a; letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
+  .cd-sep { color: #c8930a; font-size: 20px; align-self: flex-start; margin-top: 4px; }
+
+  /* EVENT DETAILS SECTION */
+  .event-details {
+    background: #fdf6e3;
+    padding: 24px 20px;
+    text-align: center;
+  }
+  .section-title {
+    font-size: 9px; letter-spacing: 3px; color: #c8930a;
+    text-transform: uppercase; margin-bottom: 4px;
+  }
+  .section-heading {
+    font-size: 20px; color: #3d2b1a; font-style: italic; margin-bottom: 16px;
+  }
+  .detail-card {
+    background: #f5ece0;
+    border: 1px solid #e8d5a3;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+  }
+  .detail-icon { font-size: 18px; flex-shrink: 0; }
+  .detail-label { font-size: 7px; letter-spacing: 2px; color: #c8930a; text-transform: uppercase; }
+  .detail-value { font-size: 11px; color: #3d2b1a; margin-top: 2px; font-weight: bold; }
+  .detail-sub { font-size: 9px; color: #6b4c2a; margin-top: 1px; }
+
+  /* VENUE SECTION */
+  .venue {
+    background: #f5ece0;
+    padding: 24px 20px;
+    text-align: center;
+  }
+  .map-placeholder {
+    background: #e8d5a3;
+    border-radius: 8px;
+    height: 100px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 12px;
+    border: 1px solid #c8930a;
+    color: #6b4c2a;
+    font-size: 11px;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .directions-btn {
+    display: inline-block;
+    border: 1.5px solid #c8930a;
+    color: #c8930a;
+    font-size: 9px;
+    letter-spacing: 2px;
+    padding: 8px 20px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    margin-top: 8px;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: #3d2b1a;
+    padding: 16px 20px;
+    text-align: center;
+  }
+  .footer-names { font-size: 14px; color: #e8d5a3; font-style: italic; margin-bottom: 4px; }
+  .footer-text { font-size: 8px; color: #8a6a3a; letter-spacing: 1px; }
+
+  /* RIGHT SIDE LEGEND */
+  .legend {
+    margin-top: 24px;
+    max-width: 320px;
+    width: 100%;
+  }
+  .legend h2 { color: #e8d5a3; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; font-weight: normal; margin-bottom: 16px; text-align: center; }
+  .palette { display: flex; gap: 8px; justify-content: center; margin-bottom: 16px; }
+  .swatch { width: 40px; height: 40px; border-radius: 50%; border: 2px solid #333; }
+  .swatch-label { font-size: 8px; color: #888; text-align: center; margin-top: 4px; }
+  .swatch-wrap { text-align: center; }
+  .tech-list { color: #aaa; font-size: 12px; line-height: 1.8; text-align: center; }
+  .tech-list strong { color: #e8d5a3; }
+</style>
+</head>
+<body>
+
+<h1>Hansi & Chanaka — Site Preview</h1>
+<p class="subtitle">Mobile mockup · Single scroll · Click anywhere to select</p>
+
+<div class="phone-frame" onclick="document.querySelector('.phone-frame').style.boxShadow='0 0 0 3px #c8930a, 0 0 0 5px #fdf6e3, 0 24px 60px rgba(0,0,0,0.6)'; document.querySelector('.phone-frame').dataset.choice='approved'; window.dispatchEvent(new CustomEvent('mockup-selected'))">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="floral-top"></div>
+    <div class="together-text">Together with their families</div>
+    <div class="couple-illustration">🫂</div>
+    <div class="names">
+      Hansi<span class="ampersand">&</span>Chanaka
+    </div>
+    <div class="tagline">Request the honour of your presence</div>
+    <div class="ornament">✦ ✦ ✦</div>
+    <div class="date-badge">July 23, 2026</div>
+    <div style="font-size:9px; color:#6b4c2a; margin-top:4px;">Thursday · 10.00 AM</div>
+  </div>
+
+  <!-- COUNTDOWN -->
+  <div class="countdown">
+    <div class="countdown-label">✦ Counting Down ✦</div>
+    <div class="countdown-grid">
+      <div class="cd-item"><span class="cd-num">397</span><span class="cd-unit">Days</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-item"><span class="cd-num">14</span><span class="cd-unit">Hours</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-item"><span class="cd-num">32</span><span class="cd-unit">Mins</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-item"><span class="cd-num">08</span><span class="cd-unit">Secs</span></div>
+    </div>
+  </div>
+
+  <!-- EVENT DETAILS -->
+  <div class="event-details">
+    <div class="section-title">✦ The Celebration ✦</div>
+    <div class="section-heading">Event Details</div>
+
+    <div class="detail-card">
+      <div class="detail-icon">🗓</div>
+      <div>
+        <div class="detail-label">Date & Time</div>
+        <div class="detail-value">Thursday, July 23, 2026</div>
+        <div class="detail-sub">Poruwa Ceremony — 10.00 AM</div>
+      </div>
+    </div>
+
+    <div class="detail-card">
+      <div class="detail-icon">🏛</div>
+      <div>
+        <div class="detail-label">Venue</div>
+        <div class="detail-value">Seetha Banquet Halls</div>
+        <div class="detail-sub">The Grand Ballroom · Pilimathalawa</div>
+      </div>
+    </div>
+
+    <div class="detail-card">
+      <div class="detail-icon">👗</div>
+      <div>
+        <div class="detail-label">Dress Code</div>
+        <div class="detail-value">Traditional / Formal</div>
+        <div class="detail-sub">Sri Lankan attire welcome</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VENUE MAP -->
+  <div class="venue">
+    <div class="section-title">✦ Find Us ✦</div>
+    <div class="section-heading">Venue & Directions</div>
+    <div class="map-placeholder">
+      <div style="font-size:20px;">📍</div>
+      <div>Seetha Banquet Halls</div>
+      <div style="font-size:9px; color:#8a6a3a;">Pilimathalawa, Sri Lanka</div>
+    </div>
+    <div style="font-size:10px; color:#3d2b1a; margin-bottom:4px; font-weight:bold;">Seetha Banquet Halls</div>
+    <div style="font-size:9px; color:#6b4c2a;">The Grand Ballroom, Pilimathalawa</div>
+    <div class="directions-btn">Get Directions →</div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-names">Hansi & Chanaka · 23.07.2026</div>
+    <div class="footer-text">Made with love ♥</div>
+  </div>
+
+</div>
+
+<div class="legend">
+  <h2>Design System</h2>
+  <div class="palette">
+    <div class="swatch-wrap">
+      <div class="swatch" style="background:#fdf6e3;"></div>
+      <div class="swatch-label">Ivory</div>
+    </div>
+    <div class="swatch-wrap">
+      <div class="swatch" style="background:#c8930a;"></div>
+      <div class="swatch-label">Gold</div>
+    </div>
+    <div class="swatch-wrap">
+      <div class="swatch" style="background:#3d2b1a;"></div>
+      <div class="swatch-label">Brown</div>
+    </div>
+    <div class="swatch-wrap">
+      <div class="swatch" style="background:#f5ece0;"></div>
+      <div class="swatch-label">Champagne</div>
+    </div>
+  </div>
+  <div class="tech-list">
+    <strong>Stack:</strong> Next.js 14 · App Router · Tailwind CSS<br>
+    <strong>Fonts:</strong> Cormorant Garant (script) · Inter (body)<br>
+    <strong>Sections:</strong> Hero · Countdown · Details · Venue<br>
+    <strong>Extras:</strong> Google Maps embed · Live countdown
+  </div>
+</div>
+
+</body>
+</html>

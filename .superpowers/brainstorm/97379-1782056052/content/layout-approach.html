@@ -1,0 +1,56 @@
+<h2>Which site layout feels right?</h2>
+<p class="subtitle">All mobile-first, single-page scroll. Pick the structure that fits best.</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="single-scroll" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#fdf6e3; padding: 12px; min-height:180px; display:flex; align-items:center; justify-content:center;">
+      <div style="width:80px; font-size:11px; color:#5a3e1b; border:1.5px solid #c8930a; border-radius:4px; overflow:hidden; text-align:center;">
+        <div style="background:#c8930a; color:#fff; padding:4px 2px; font-size:9px; font-weight:bold;">HERO</div>
+        <div style="background:#fdf6e3; padding:4px 2px; border-bottom:1px solid #e8d5a3;">⏳ Countdown</div>
+        <div style="background:#f5ece0; padding:4px 2px; border-bottom:1px solid #e8d5a3;">📅 Event Details</div>
+        <div style="background:#fdf6e3; padding:4px 2px;">📍 Venue + Map</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Single Scroll</h3>
+      <p>Everything on one long page. Hero → Countdown → Event Details → Venue. Clean, minimal, fast. <strong>Recommended.</strong></p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="tabs" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#fdf6e3; padding:12px; min-height:180px; display:flex; align-items:center; justify-content:center;">
+      <div style="width:90px; font-size:11px; color:#5a3e1b; border:1.5px solid #c8930a; border-radius:4px; overflow:hidden; text-align:center;">
+        <div style="background:#c8930a; color:#fff; padding:4px 2px; font-size:9px; font-weight:bold;">HERO</div>
+        <div style="background:#fdf6e3; display:flex; border-bottom:1px solid #c8930a;">
+          <div style="flex:1; padding:3px 1px; font-size:8px; background:#c8930a; color:#fff;">Details</div>
+          <div style="flex:1; padding:3px 1px; font-size:8px; border-right:1px solid #c8930a;">Venue</div>
+          <div style="flex:1; padding:3px 1px; font-size:8px;">Timer</div>
+        </div>
+        <div style="background:#f5ece0; padding:12px 4px; font-size:8px; color:#888;">Tab content area</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Hero + Tabs</h3>
+      <p>Full-screen hero, then swipeable tabs below for each section. App-like feel, great on mobile.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="invitation-style" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:linear-gradient(180deg, #fdf6e3 0%, #f5ece0 100%); padding:12px; min-height:180px; display:flex; align-items:center; justify-content:center;">
+      <div style="width:80px; font-size:9px; color:#5a3e1b; border:2px double #c8930a; border-radius:4px; padding:6px; text-align:center;">
+        <div style="color:#c8930a; font-size:14px;">🪷</div>
+        <div style="font-weight:bold; font-size:10px; margin:2px 0;">Hansi & Chanaka</div>
+        <div style="color:#888; font-size:7px; margin:2px 0;">July 23 · 2026</div>
+        <div style="border-top:1px solid #e8d5a3; margin-top:4px; padding-top:4px; font-size:7px;">⏳ 397 days</div>
+        <div style="font-size:7px; margin-top:2px;">📅 Seetha Banquet</div>
+        <div style="font-size:7px; margin-top:2px;">📍 Pilimathalawa</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Digital Invitation</h3>
+      <p>The website mirrors the physical invite — ornate borders, floral frames, all info elegantly layered. Feels like opening the actual card on your phone.</p>
+    </div>
+  </div>
+
+</div>
