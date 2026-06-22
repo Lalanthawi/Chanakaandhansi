@@ -1,3 +1,4 @@
+import { Phone } from 'lucide-react'
 import Hero from '@/components/Hero'
 import Countdown from '@/components/Countdown'
 import EventDetails from '@/components/EventDetails'
@@ -12,7 +13,14 @@ function Footer() {
       <p className="text-[8px] tracking-[3px] uppercase text-gold/70 mb-2">
         23 · 07 · 2026
       </p>
-      <p className="text-gold text-sm">♥</p>
+      <p className="text-gold text-sm mb-4">♥</p>
+      <a
+        href="tel:+94716343550"
+        className="inline-flex items-center gap-2 text-[9px] tracking-[2px] uppercase text-gold/60 hover:text-gold transition-colors"
+      >
+        <Phone size={11} strokeWidth={1.5} />
+        071 634 3550
+      </a>
     </footer>
   )
 }
