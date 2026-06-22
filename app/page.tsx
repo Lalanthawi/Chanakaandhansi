@@ -1,4 +1,5 @@
 import { Phone } from 'lucide-react'
+import RSVP from '@/components/RSVP'
 import Hero from '@/components/Hero'
 import Countdown from '@/components/Countdown'
 import EventDetails from '@/components/EventDetails'
@@ -32,6 +33,7 @@ export default function Page() {
       <Countdown />
       <EventDetails />
       <VenueMap />
+      <RSVP />
       <Footer />
       <MusicPlayer />
       <Confetti />
