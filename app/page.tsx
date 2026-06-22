@@ -3,6 +3,7 @@ import Countdown from '@/components/Countdown'
 import EventDetails from '@/components/EventDetails'
 import VenueMap from '@/components/VenueMap'
 import MusicPlayer from '@/components/MusicPlayer'
+import Confetti from '@/components/Confetti'
 
 function Footer() {
   return (
@@ -25,6 +26,7 @@ export default function Page() {
       <VenueMap />
       <Footer />
       <MusicPlayer />
+      <Confetti />
     </main>
   )
 }

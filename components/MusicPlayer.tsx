@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { Music } from 'lucide-react'
 
 export default function MusicPlayer() {
   const audioRef = useRef<HTMLAudioElement | null>(null)
@@ -12,15 +13,11 @@ export default function MusicPlayer() {
     audio.volume = 0.4
     audioRef.current = audio
 
-    // Try autoplay immediately — works in some browsers/contexts
     audio.play().then(() => {
       setPlaying(true)
     }).catch(() => {
-      // Browser blocked autoplay — start on first user interaction anywhere
       const startOnGesture = () => {
-        audio.play().then(() => {
-          setPlaying(true)
-        }).catch(() => {})
+        audio.play().then(() => setPlaying(true)).catch(() => {})
         document.removeEventListener('click', startOnGesture)
         document.removeEventListener('touchstart', startOnGesture)
         document.removeEventListener('scroll', startOnGesture)
@@ -48,9 +45,7 @@ export default function MusicPlayer() {
       try {
         await audio.play()
         setPlaying(true)
-      } catch {
-        // play() rejected — shouldn't happen after first gesture but handle gracefully
-      }
+      } catch {}
     }
   }
 
@@ -58,19 +53,15 @@ export default function MusicPlayer() {
     <button
       onClick={toggle}
       aria-label={playing ? 'Pause music' : 'Play music'}
-      title={playing ? 'Pause music' : 'Play background music'}
       className="fixed bottom-5 right-5 z-50 w-12 h-12 rounded-full bg-dark border-2 border-gold shadow-[0_4px_20px_rgba(200,147,10,0.4)] flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-[0_4px_28px_rgba(200,147,10,0.6)]"
     >
-      {playing ? (
-        <span className="flex gap-[3px] items-center">
-          <span className="w-[3px] h-4 bg-gold rounded-sm block" />
-          <span className="w-[3px] h-4 bg-gold rounded-sm block" />
-        </span>
-      ) : (
-        <span className="text-gold text-xl leading-none select-none">♪</span>
-      )}
+      <Music
+        size={18}
+        className={`text-gold transition-all ${playing ? 'animate-spin-slow' : ''}`}
+        strokeWidth={1.5}
+      />
       {playing && (
-        <span className="absolute inset-0 rounded-full border border-gold animate-ping opacity-30" />
+        <span className="absolute inset-0 rounded-full border border-gold animate-ping opacity-25" />
       )}
     </button>
   )

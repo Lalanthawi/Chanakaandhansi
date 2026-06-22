@@ -1,18 +1,23 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import { CalendarDays, Building2, Gem } from 'lucide-react'
+
 const details = [
   {
-    icon: '🗓',
+    Icon: CalendarDays,
     label: 'Date & Time',
     value: 'Thursday, July 23, 2026',
     sub: 'Poruwa Ceremony begins at 10.00 AM',
   },
   {
-    icon: '🏛',
+    Icon: Building2,
     label: 'Venue',
     value: 'Seetha Banquet Halls',
     sub: 'The Grand Ballroom · Pilimathalawa',
   },
   {
-    icon: '👗',
+    Icon: Gem,
     label: 'Dress Code',
     value: 'Formal / Traditional',
     sub: 'Traditional Sri Lankan attire welcome',
@@ -21,29 +26,46 @@ const details = [
 
 export default function EventDetails() {
   return (
-    <section className="bg-ivory px-5 py-7">
-      <p className="text-[8px] tracking-[4px] uppercase text-gold text-center mb-1">
-        ✦ &nbsp; The Celebration &nbsp; ✦
-      </p>
-      <h2 className="font-serif font-semibold italic text-2xl text-espresso text-center mb-5">
-        Event Details
-      </h2>
+    <section className="bg-ivory px-5 py-10">
+      <motion.div
+        className="text-center mb-7"
+        initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }} transition={{ duration: 0.7 }}
+      >
+        <p className="text-[8px] tracking-[4px] uppercase text-gold mb-1">
+          ✦ &nbsp; The Celebration &nbsp; ✦
+        </p>
+        <h2 className="font-serif font-semibold italic text-2xl text-espresso">
+          Event Details
+        </h2>
+      </motion.div>
 
-      <div className="flex flex-col gap-3 max-w-sm mx-auto">
-        {details.map((d) => (
-          <div
-            key={d.label}
-            className="flex items-start gap-3.5 bg-white rounded-xl border-l-[3px] border-gold shadow-sm px-3.5 py-3"
+      <div className="flex flex-col gap-4 max-w-sm mx-auto">
+        {details.map(({ Icon, label, value, sub }, i) => (
+          <motion.div
+            key={label}
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: i * 0.12 }}
+            whileHover={{ y: -3, boxShadow: '0 12px 32px rgba(200,147,10,0.15)' }}
+            className="bg-white rounded-2xl shadow-md px-5 py-4 flex items-center gap-4 cursor-default"
+            style={{ boxShadow: '0 4px 20px rgba(61,43,26,0.08)' }}
           >
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold to-gold-light flex items-center justify-center text-lg shrink-0">
-              {d.icon}
+            {/* Icon badge */}
+            <div className="shrink-0 w-11 h-11 rounded-full bg-gradient-to-br from-gold to-gold-light flex items-center justify-center shadow-md">
+              <Icon size={18} className="text-white" strokeWidth={1.5} />
             </div>
-            <div>
-              <p className="text-[7px] tracking-[2px] uppercase text-gold mb-0.5">{d.label}</p>
-              <p className="font-serif font-semibold text-sm text-espresso leading-snug">{d.value}</p>
-              <p className="text-[9px] text-[#6b4c2a] mt-0.5">{d.sub}</p>
+
+            {/* Thin gold separator */}
+            <div className="w-px self-stretch bg-gradient-to-b from-transparent via-gold/30 to-transparent" />
+
+            <div className="min-w-0">
+              <p className="text-[7px] tracking-[2px] uppercase text-gold mb-0.5">{label}</p>
+              <p className="font-serif font-semibold text-sm text-espresso leading-snug">{value}</p>
+              <p className="text-[9px] text-[#8a6a3a] mt-0.5">{sub}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
