@@ -40,7 +40,7 @@ function FlipUnit({ value, label }: { value: string; label: string }) {
         <div className="absolute inset-x-3 top-1.5 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
         <span
           key={value}
-          className={`font-serif font-semibold text-[2rem] leading-none text-ivory block ${flip ? 'cd-flip' : ''}`}
+          className={`font-sans font-semibold text-[2rem] leading-none text-ivory block tracking-tight ${flip ? 'cd-flip' : ''}`}
         >
           {value}
         </span>
