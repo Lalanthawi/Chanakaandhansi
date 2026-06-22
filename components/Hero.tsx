@@ -114,31 +114,32 @@ export default function Hero() {
           Save the Date
         </motion.p>
 
-        {/* Date */}
-        <motion.div {...up(1.3)} className="flex items-center justify-center gap-3 mb-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gold to-gold-light flex items-center justify-center shrink-0 shadow-md">
-            <CalendarDays size={18} className="text-white" strokeWidth={1.5} />
-          </div>
-          <div className="text-left">
-            <p className="text-[8px] tracking-[2px] uppercase text-[#8a6a3a]">Thursday</p>
-            <p className="font-serif font-semibold text-sm text-espresso">July 23, 2026</p>
-            <p className="text-[9px] text-[#6b4c2a]">Poruwa Ceremony · 10.00 AM</p>
-          </div>
-        </motion.div>
+        {/* Date + Venue — shared container keeps both rows left-aligned */}
+        <div className="w-[220px] mx-auto flex flex-col gap-3">
+          <motion.div {...up(1.3)} className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gold to-gold-light flex items-center justify-center shrink-0 shadow-md">
+              <CalendarDays size={18} className="text-white" strokeWidth={1.5} />
+            </div>
+            <div>
+              <p className="text-[8px] tracking-[2px] uppercase text-[#8a6a3a]">Thursday</p>
+              <p className="font-serif font-semibold text-sm text-espresso">July 23, 2026</p>
+              <p className="text-[9px] text-[#6b4c2a]">Poruwa Ceremony · 10.00 AM</p>
+            </div>
+          </motion.div>
 
-        <motion.div {...fade(1.4)} className="gold-divider mx-5 mb-3">·</motion.div>
+          <motion.div {...fade(1.4)} className="gold-divider mb-0">·</motion.div>
 
-        {/* Venue */}
-        <motion.div {...up(1.45)} className="flex items-start justify-center gap-3 mb-1">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gold to-gold-light flex items-center justify-center shrink-0 shadow-md">
-            <MapPin size={18} className="text-white" strokeWidth={1.5} />
-          </div>
-          <div className="text-left">
-            <p className="text-[7px] tracking-[2px] uppercase text-[#8a6a3a]">Venue</p>
-            <p className="font-serif font-semibold text-sm text-espresso">Seetha Banquet Halls</p>
-            <p className="text-[9px] text-[#6b4c2a]">The Grand Ballroom · Pilimathalawa</p>
-          </div>
-        </motion.div>
+          <motion.div {...up(1.45)} className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gold to-gold-light flex items-center justify-center shrink-0 shadow-md">
+              <MapPin size={18} className="text-white" strokeWidth={1.5} />
+            </div>
+            <div>
+              <p className="text-[8px] tracking-[2px] uppercase text-[#8a6a3a]">Venue</p>
+              <p className="font-serif font-semibold text-sm text-espresso">Seetha Banquet Halls</p>
+              <p className="text-[9px] text-[#6b4c2a]">The Grand Ballroom · Pilimathalawa</p>
+            </div>
+          </motion.div>
+        </div>
       </div>
 
       <motion.div
