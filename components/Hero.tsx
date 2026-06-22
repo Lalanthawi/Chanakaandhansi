@@ -129,9 +129,9 @@ export default function Hero() {
         <motion.div {...fade(1.4)} className="gold-divider mx-5 mb-3">·</motion.div>
 
         {/* Venue */}
-        <motion.div {...up(1.45)} className="flex items-start justify-center gap-2 mb-1">
-          <div className="w-7 h-7 rounded-full bg-gradient-to-br from-gold to-gold-light flex items-center justify-center shrink-0 mt-0.5 shadow-md">
-            <MapPin size={13} className="text-white" strokeWidth={2} />
+        <motion.div {...up(1.45)} className="flex items-start justify-center gap-3 mb-1">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gold to-gold-light flex items-center justify-center shrink-0 shadow-md">
+            <MapPin size={18} className="text-white" strokeWidth={1.5} />
           </div>
           <div className="text-left">
             <p className="text-[7px] tracking-[2px] uppercase text-[#8a6a3a]">Venue</p>
