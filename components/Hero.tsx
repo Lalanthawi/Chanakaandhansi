@@ -70,14 +70,15 @@ export default function Hero() {
           className="couple-frame relative w-52 h-52 mx-auto mb-1"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 1.2, delay: 0.05, ease: SPRING }}
         >
           <Image
-            src="/couple.jpg"
+            src="/couple-illustration.png"
             alt="Hansi and Chanaka"
             fill
             sizes="208px"
-            className="object-cover object-top rounded-full"
+            className="object-contain rounded-full"
+            style={{ backgroundColor: '#fdf6e3' }}
             priority
           />
         </motion.div>
