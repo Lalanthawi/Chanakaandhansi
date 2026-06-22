@@ -2,6 +2,7 @@ import Hero from '@/components/Hero'
 import Countdown from '@/components/Countdown'
 import EventDetails from '@/components/EventDetails'
 import VenueMap from '@/components/VenueMap'
+import MusicPlayer from '@/components/MusicPlayer'
 
 function Footer() {
   return (
@@ -23,6 +24,7 @@ export default function Page() {
       <EventDetails />
       <VenueMap />
       <Footer />
+      <MusicPlayer />
     </main>
   )
 }

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Ivory background -->
+  <rect width="32" height="32" rx="6" fill="#fdf6e3"/>
+
+  <!-- Lotus petals - outer ring -->
+  <ellipse cx="16" cy="22" rx="3.5" ry="7" fill="#c8930a" opacity="0.35" transform="rotate(-30 16 22)"/>
+  <ellipse cx="16" cy="22" rx="3.5" ry="7" fill="#c8930a" opacity="0.35" transform="rotate(30 16 22)"/>
+  <ellipse cx="16" cy="22" rx="3.5" ry="7" fill="#c8930a" opacity="0.35"/>
+
+  <!-- Lotus petals - inner ring -->
+  <ellipse cx="16" cy="20" rx="2.8" ry="6" fill="#c8930a" opacity="0.6" transform="rotate(-18 16 20)"/>
+  <ellipse cx="16" cy="20" rx="2.8" ry="6" fill="#c8930a" opacity="0.6" transform="rotate(18 16 20)"/>
+  <ellipse cx="16" cy="20" rx="2.8" ry="6" fill="#c8930a" opacity="0.6"/>
+
+  <!-- Center petal (front) -->
+  <ellipse cx="16" cy="19" rx="2.2" ry="5.5" fill="#e8a820"/>
+
+  <!-- Center dot -->
+  <circle cx="16" cy="16" r="2" fill="#3d2b1a"/>
+
+  <!-- Gold ring base -->
+  <ellipse cx="16" cy="25" rx="5" ry="1.5" fill="#c8930a" opacity="0.4"/>
+</svg>
