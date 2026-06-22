@@ -78,7 +78,7 @@ export default function Hero() {
             fill
             sizes="208px"
             className="object-contain rounded-full"
-            style={{ backgroundColor: '#fdf6e3' }}
+            style={{ backgroundColor: '#ffffff' }}
             priority
           />
         </motion.div>
