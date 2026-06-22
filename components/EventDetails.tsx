@@ -48,9 +48,9 @@ export default function EventDetails() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: i * 0.12 }}
-            whileHover={{ y: -3, boxShadow: '0 12px 32px rgba(200,147,10,0.15)' }}
-            className="bg-white rounded-2xl shadow-md px-5 py-4 flex items-center gap-4 cursor-default"
-            style={{ boxShadow: '0 4px 20px rgba(61,43,26,0.08)' }}
+            whileHover={{ y: -3, boxShadow: '0 12px 32px rgba(200,147,10,0.18)' }}
+            className="bg-gradient-to-br from-champagne to-[#f0e2cc] rounded-2xl px-5 py-4 flex items-center gap-4 cursor-default border border-[#e8d5a3]"
+            style={{ boxShadow: '0 4px 20px rgba(200,147,10,0.08)' }}
           >
             {/* Icon badge */}
             <div className="shrink-0 w-11 h-11 rounded-full bg-gradient-to-br from-gold to-gold-light flex items-center justify-center shadow-md">
