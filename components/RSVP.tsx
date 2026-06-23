@@ -29,7 +29,7 @@ export default function RSVP() {
           RSVP
         </h2>
         <p className="text-[10px] text-[#c8930a]/70 mb-7">
-          Kindly respond by <span className="text-gold">July 10, 2026</span>
+          Kindly respond by <span className="text-gold">July 4, 2026</span>
         </p>
       </motion.div>
 
